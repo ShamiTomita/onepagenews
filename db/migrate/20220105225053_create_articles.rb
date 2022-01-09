@@ -6,7 +6,6 @@ class CreateArticles < ActiveRecord::Migration[6.1]
       t.string :news_org
       t.string :category
       t.string :published
-      t.integer :user_id
       t.string :description
 
       t.timestamps
