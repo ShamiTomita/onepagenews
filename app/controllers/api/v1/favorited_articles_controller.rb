@@ -1,2 +1,3 @@
-class FavoritedArticlesController < ApplicationController
+class Api::V1::FavoritedArticlesController < ApplicationController
+  
 end
