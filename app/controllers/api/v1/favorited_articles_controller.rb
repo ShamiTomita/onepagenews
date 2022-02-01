@@ -16,12 +16,13 @@ class Api::V1::FavoritedArticlesController < ApplicationController
   end
 
   def create
-    favorited_article = FavoritedArticle.new(favorited_article_params)
+    fave = FavoritedArticle.create(favorited_article_params)
+    render json: FavoritedArticlesSerializer.new(fave)
   end
 
   private
-  def user_params
-    params.require(:favorited_article).permit(:user_id, :article_id)
+  def favorited_article_params
+    params.permit(:user_id, :article_id)
   end
 
 
