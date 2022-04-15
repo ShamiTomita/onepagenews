@@ -39,14 +39,3 @@ science_array = createArticles(science_articles)
 sports_array = createArticles(sports_articles)
 tech_array = createArticles(technology_articles)
 top_array = createArticles(top_headlines)
-
-
-#WEATHER
-zip = "78249"
-response_a = RestClient.get("api.openweathermap.org/data/2.5/weather?zip=#{zip.to_i},us&appid=b7bfa861214865eea90a83b5ecc80c7e")
-weather = RestClient.get("https://api.openweathermap.org/data/2.5/onecall?lat=#{zip.to_lat}&lon=#{zip.to_lon}&exclude=minutely&appid=b7bfa861214865eea90a83b5ecc80c7e")
-current_weather = weather["current"]
-current_time = Time.at(weather["current"]["dt"]).to_datetime
-current_sunrise = Time.at(weather["current"]["sunrise"]).to_datetime
-current_sunset = Time.at(weather["current"]["sunset"]).to_datetime
-current_uvi = weather["current"]["uvi"]
