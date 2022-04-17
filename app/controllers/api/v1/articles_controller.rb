@@ -2,12 +2,12 @@ class Api::V1::ArticlesController < ApplicationController
 
   def index
     articles = Article.all
-    render json: ArticleSerializer.new(articles)
+    render json: articles
   end
 
   def show
     article = Article.find_by(id: params[:id])
-    render json: ArticleSerializer.new(article)
+    render json: article
   end
 
   private
