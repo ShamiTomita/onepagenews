@@ -3,6 +3,10 @@ class Api::V1::UsersController < ApplicationController
     @user = User.new
   end
 
+  def create
+    @user = User.create
+  end 
+
   def index
     users = User.all
     render json: users
