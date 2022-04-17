@@ -4,12 +4,15 @@ class Api::V1::UsersController < ApplicationController
     @user = User.new
   end
 
+  def index
+    user = User.all
+  end 
   def create
     user = User.new(user_params)
     if !user.save
       render json: {:errors => user.errors.full_messages}
     else
-      render json: article
+      render json: user
     end
   end
 
