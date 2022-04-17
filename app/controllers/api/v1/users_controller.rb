@@ -2,6 +2,7 @@
 class Api::V1::UsersController < ApplicationController
   def index
     user = User.all
+    render json:users
   end
   def create
     user = User.new(user_params)
