@@ -24,3 +24,4 @@ private
 def favorited_article_params
   params.permit(:user_id, :article_id)
 end
+end 
