@@ -3,8 +3,9 @@ require 'area'
 
 newsapi = News.new("942d82be5ab04c0e810e412394d04c7a")
 sources = newsapi.get_sources(country: 'us', language: 'en')
+today = DateTime.now.strftime("%Y-%m-%d")
 #business entertainment general health science sports technology
-all_articles = newsapi.get_everything(sources: 'bbc-news,the-verge,nbc-news,cnn,reuters,politico,abc-news,NPR', language: 'en', from: '2022-04-01')
+all_articles = newsapi.get_everything(sources: 'bbc-news,the-verge,nbc-news,cnn,reuters,politico,abc-news,NPR', language: 'en', from: today)
 #use this to go through first
 business_articles = newsapi.get_top_headlines(category: 'business', language: 'en', country:'us')
 entertainment_articles = newsapi.get_top_headlines(category: 'entertainment', language: 'en', country:'us')
